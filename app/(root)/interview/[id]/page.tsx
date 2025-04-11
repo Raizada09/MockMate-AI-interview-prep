@@ -24,10 +24,10 @@ const InterviewDetails = async ({ params }: RouteParams) => {
     userId: user?.id || '',
   });
 
-  // Use the interview's coverImage if available, otherwise get a random one
+ 
   const imageSrc = interview.coverImage || getRandomInterviewCover();
   
-  // Normalize the interview type for consistent badge styling
+  
   const normalizedType = /mix/gi.test(interview.type) ? "Mixed" : interview.type;
   
   // Ensure the type always starts with a capital letter
@@ -78,12 +78,12 @@ const InterviewDetails = async ({ params }: RouteParams) => {
           </div>
           
           <div className="flex gap-2">
-            {/* Level badge */}
+           
             <p className={cn("px-4 py-2 rounded-lg", levelBadgeColor)}>
               <span className="badge-text font-medium text-white">{displayLevel}</span>
             </p>
             
-            {/* Type badge */}
+           
             <p className={cn("px-4 py-2 rounded-lg", typeBadgeColor)}>
               <span className="badge-text font-medium text-white">{displayType}</span>
             </p>

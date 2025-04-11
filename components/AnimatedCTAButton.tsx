@@ -22,25 +22,25 @@ const AnimatedCTAButton = ({
   const [isMounted, setIsMounted] = useState(false);
   const [showGlow, setShowGlow] = useState(false);
 
-  // Initialize on client-side
+ 
   useEffect(() => {
     setIsMounted(true);
     
-    // Delay showing the glow effect until after the button appears
+    
     const timer = setTimeout(() => {
       setShowGlow(true);
-    }, (delay + 1) * 1000); // Convert to milliseconds
+    }, (delay + 1) * 1000);
     
     return () => clearTimeout(timer);
   }, [delay]);
 
   if (!isMounted) {
-    return null; // Prevent SSR flash
+    return null; 
   }
 
   return (
     <div className="relative inline-block mx-auto">
-      {/* Glow effect */}
+     
       {showGlow && (
         <motion.div
           className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 opacity-70 blur-lg"
@@ -62,11 +62,11 @@ const AnimatedCTAButton = ({
             repeat: Infinity,
             repeatType: "reverse"
           }}
-          // whileHover={{ opacity: 0.9, scale: 1.05 }}
+         
         />
       )}
       
-      {/* Button */}
+     
       <motion.div
         className="relative"
         initial={{ opacity: 0, y: 10 }}
@@ -97,7 +97,7 @@ const AnimatedCTAButton = ({
               <ArrowRight size={18} />
             </motion.div>
             
-            {/* Subtle shine effect */}
+           
             {isHovered && (
               <motion.div 
                 className="absolute inset-0 overflow-hidden rounded-full"

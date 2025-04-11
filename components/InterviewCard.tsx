@@ -29,7 +29,7 @@ const InterviewCard = async ({
 
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
 
-  // Type badge color mapping
+  
   const typeBadgeColor =
     {
       Behavioral: "bg-light-800",
@@ -37,7 +37,7 @@ const InterviewCard = async ({
       Technical: "bg-blue-600",
     }[normalizedType] || "bg-violet-600";
 
-  // Level badge color mapping
+ 
   const levelBadgeColor = {
     "entry level": "bg-emerald-600",
     beginner: "bg-teal-600",
@@ -52,14 +52,14 @@ const InterviewCard = async ({
     feedback?.createdAt || createdAt || Date.now()
   ).format("MMM D, YYYY");
 
-  // Use coverImage from props if available, otherwise use random cover
+ 
   const imageSrc = coverImage || getRandomInterviewCover();
 
   return (
     <div className="card-border w-[360px] max-sm:w-full min-h-96">
       <div className="card-interview">
         <div>
-          {/* Type Badge - Top Right */}
+         
           <div
             className={cn(
               "absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg z-10",
@@ -69,7 +69,7 @@ const InterviewCard = async ({
             <p className="badge-text font-medium text-white">{normalizedType}</p>
           </div>
 
-          {/* Level Badge - Top Left */}
+        
           <div
             className={cn(
               "absolute top-0 left-0 w-fit px-4 py-2 rounded-br-lg z-10",
@@ -79,7 +79,7 @@ const InterviewCard = async ({
             <p className="badge-text font-medium text-white capitalize">{level || "Beginner"}</p>
           </div>
 
-          {/* Cover Image */}
+         
           <Image
             src={imageSrc}
             alt="cover-image"
@@ -88,10 +88,10 @@ const InterviewCard = async ({
             className="rounded-full object-fit size-[90px] mt-6 mx-auto"
           />
 
-          {/* Interview Role */}
+         
           <h3 className="my-5 capitalize">{role} Interview</h3>
 
-          {/* Date & Score & Questions Count */}
+         
           <div className="flex flex-row flex-wrap gap-5 mt-3">
             <div className="flex flex-row gap-2">
               <Image
@@ -126,7 +126,7 @@ const InterviewCard = async ({
             </div>
           </div>
 
-          {/* Feedback or Placeholder Text */}
+        
           <p className="line-clamp-2 mt-5">
             {feedback?.finalAssessment ||
               "You haven't taken this interview yet. Take it now to improve your skills."}

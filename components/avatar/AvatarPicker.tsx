@@ -22,7 +22,7 @@ const AvatarPicker = ({ currentAvatar, userId, userName }: AvatarPickerProps) =>
     setAvatar(newAvatar);
     setIsModalOpen(false);
     
-    // Update the user's avatar in the database
+    
     try {
       const result = await updateUserAvatar({
         userId,
@@ -57,21 +57,21 @@ const AvatarPicker = ({ currentAvatar, userId, userName }: AvatarPickerProps) =>
             className="rounded-full object-cover size-[40px]"
           />
           
-          {/* Hover Overlay */}
+        
           {isHovering && (
             <div className="absolute inset-0 bg-dark-200/70 rounded-full flex items-center justify-center">
               <PlusCircle className="w-6 h-6 text-primary-200" />
             </div>
           )}
           
-          {/* Tooltip */}
+        
           <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-dark-300 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
             Change avatar
           </div>
         </div>
       </div>
 
-      {/* Avatar Selection Modal */}
+    
       {isModalOpen && (
         <AvatarModal 
           currentAvatar={avatar}

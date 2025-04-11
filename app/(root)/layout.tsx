@@ -10,7 +10,7 @@ const RootLayout = async ({children }: {children: ReactNode}) => {
   const isUserAuthenticated = await isAuthenticated();
   if (!isUserAuthenticated) redirect("/sign-in");
   
-  // Get current user data
+  
   const user = await getCurrentUser();
 
   // Default avatar path if user doesn't have one set
@@ -21,7 +21,7 @@ const RootLayout = async ({children }: {children: ReactNode}) => {
       <nav className='w-full flex justify-between items-center'>
         <Logo link />
         
-        {/* User profile section */}
+       
         {user && (
           <div className="flex items-center gap-3">
             <span className="text-light-100 text-lg font-medium">{user.name}</span>

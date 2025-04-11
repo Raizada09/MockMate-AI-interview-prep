@@ -143,8 +143,8 @@ export async function getLatestInterviews(
   params: GetLatestInterviewsParams
 ): Promise<Interview[] | null> {
   // Use environment variable with fallback to 200 if not provided
-  const defaultLimit = Number(process.env.NEXT_PUBLIC_MAX_INTERVIEWS);
-  const { userId, limit = defaultLimit } = params;
+  // const defaultLimit = Number(process.env.NEXT_PUBLIC_MAX_INTERVIEWS);
+  const { userId, limit = 20 } = params;
 
   const interviews = await db
     .collection("interviews")

@@ -14,7 +14,7 @@ interface AvatarModalProps {
 const AvatarModal = ({ currentAvatar, onSelect, onClose }: AvatarModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Close modal when clicking outside
+ 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -46,7 +46,7 @@ const AvatarModal = ({ currentAvatar, onSelect, onClose }: AvatarModalProps) => 
 
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
           {AVATAR_OPTIONS.map((avatar, index) => {
-            // Fix: Use the full path for the avatar
+           
             const fullAvatarPath = `${AVATARS_PATH}${avatar}`;
             
             return (
